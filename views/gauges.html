@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Sara Sae :: RT138</title>
+    <link href="/stylesheets/fonts.min.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/gauges.min.css" rel="stylesheet" /> <!--page CSS-->
+    <!--for footer content Resources start-->
+    <link href="/stylesheets/modeldialog.min.css" rel="stylesheet" />
+    <link href="/stylesheets/alarm_button.min.css" rel="stylesheet" />
+    <link href="/stylesheets/stylishscroll.min.css" rel="stylesheet" />
+    <link href="/javascripts/animated_marq/animate.min.css" rel="stylesheet" />
+    <!--for footer content Resources End-->
+</head>
+<body>
+
+<a href="/bop" title="back"><img class="home" src="/svg/back_arrow.svg"></a>
+
+<a href="/logout" title="Log out"><img class="log_out" src="/svg/logout.svg"></a>
+<label id="info">ANNULAR PRESSURE</label><label id="infoII">PRESSURE vs TIME</label>
+<img src="svg/left_arrow.svg" alt="< prev" class="arrow_left" onclick="prv_gug()"/>
+
+
+
+
+<!--Gauge 1-->
+<div style="margin-top:0px; display: none;" id="gauge_1">
+
+    <div class="big_ann">
+        <div style=" position: absolute;margin-left: 168px;margin-top: 145px;"><canvas id="myCanvas" height="310" width="380" > </canvas></div>
+        <div style="position: absolute;margin-left: 151px;margin-top: 120px;"><span id="speedometer"></span></div>
+    </div>
+
+
+
+        <div class="sml_ann">
+            <div style="position: absolute;margin-left: 150px;margin-top: 80px;">
+            <div style=" position: absolute;margin-left: 42px;margin-top: 29px;"><canvas id="myCanvas_s1" height="250" width="260"> </canvas></div>
+            <div style=" position: absolute;margin-left: -10px;margin-top:0px;"> <span id="speedometer_s1"></span></div>
+            </div>
+
+        </div>
+
+
+    <label class="g_txt">psi</label>
+</div>
+
+<!--Gauge 2-->
+<div style="margin-top:0px; display: none;" id="gauge_2">
+    <div class="big_ann">
+        <div style=" position: absolute;margin-left: 168px;margin-top: 145px;"><canvas id="myCanvas2" height="310" width="380" > </canvas></div>
+        <div style="position: absolute;margin-left: 151px;margin-top: 120px;"><span id="speedometer2"></span></div>
+    </div>
+
+
+
+    <div class="sml_ann">
+        <div style="position: absolute;margin-left: 150px;margin-top: 80px;">
+            <div style=" position: absolute;margin-left: 42px;margin-top: 29px;"><canvas id="myCanvas2_s2" height="250" width="260"> </canvas></div>
+            <div style=" position: absolute;margin-left: -10px;margin-top:0px;"> <span id="speedometer2_s2"></span></div>
+        </div>
+
+    </div>
+    <label class="g_txt">psi</label>
+</div>
+<!--Guage 3-->
+<div style="margin-top:0px; display: none;" id="gauge_3">
+    <div class="big_ann">
+        <div style=" position: absolute;margin-left: 168px;margin-top: 145px;"><canvas id="myCanvas3" height="310" width="380" > </canvas></div>
+        <div style="position: absolute;margin-left: 151px;margin-top: 120px;"><span id="speedometer3"></span></div>
+    </div>
+
+
+
+    <div class="sml_ann">
+        <div style="position: absolute;margin-left: 150px;margin-top: 80px;">
+            <div style=" position: absolute;margin-left: 42px;margin-top: 29px;"><canvas id="myCanvas3_s3" height="250" width="260"> </canvas></div>
+            <div style=" position: absolute;margin-left: -10px;margin-top:0px;"> <span id="speedometer3_s3"></span></div>
+        </div>
+
+    </div>
+    <label class="g_txt">psi</label>
+
+
+</div>
+
+<!--Guage 4-->
+<div style="margin-top:0px; display: none;" id="gauge_4">
+    <div class="big_ann">
+        <div style=" position: absolute;margin-left: 168px;margin-top: 145px;"><canvas id="myCanvas5" height="310" width="380" > </canvas></div>
+        <div style="position: absolute;margin-left: 151px;margin-top: 120px;"><span id="speedometer5"></span></div>
+    </div>
+
+
+
+    <div class="sml_ann">
+        <div style="position: absolute;margin-left: 150px;margin-top: 80px;">
+            <div style=" position: absolute;margin-left: 42px;margin-top: 29px;"><canvas id="myCanvas5_s5" height="250" width="260"> </canvas></div>
+            <div style=" position: absolute;margin-left: -10px;margin-top:0px;"> <span id="speedometer5_s5"></span></div>
+        </div>
+
+    </div>
+    <label class="g_txt">psi</label>
+
+</div>
+<!--Guage 5-->
+<div style="margin-top:0px; display: none;" id="gauge_5">
+    <div class="big_ann">
+        <div style=" position: absolute;margin-left: 168px;margin-top: 145px;"><canvas id="myCanvas4" height="310" width="380" > </canvas></div>
+        <div style="position: absolute;margin-left: 151px;margin-top: 120px;"><span id="speedometer4"></span></div>
+    </div>
+
+
+
+    <div class="sml_ann">
+        <div style="position: absolute;margin-left: 150px;margin-top: 80px;">
+            <div style=" position: absolute;margin-left: 42px;margin-top: 29px;"><canvas id="myCanvas4_s4" height="250" width="260"> </canvas></div>
+            <div style=" position: absolute;margin-left: -10px;margin-top:0px;"> <span id="speedometer4_s4"></span></div>
+        </div>
+
+    </div>
+    <label class="g_txt">psi</label>
+
+
+</div>
+
+<img src="svg/right_arrow.svg" alt="< prev" id="right_img" class="arrow_right" onclick="nxt_gug()"/>
+
+<!--Area Chart start-->
+<div id="linearea_1" style="display:block;" ><div id="a1">FusionCharts XT will load here!</div> </div>
+<div id="linearea_2" style="display:none;" ><div id="a2">FusionCharts XT will load here!</div> </div>
+<div id="linearea_3" style="display:none;" ><div id="a3">FusionCharts XT will load here!</div> </div>
+<div id="linearea_4" style="display:none;" ><div id="a4">FusionCharts XT will load here!</div> </div>
+<div id="linearea_5" style="display:none;" ><div id="a5">FusionCharts XT will load here!</div> </div>
+<!--Area Chart end-->
+
+<hr>
+<!--multiline chart-->
+<div id="multiline" style="">FusionCharts XT will load here!</div>
+
+<!--<div class="contentII">-->
+<!--<div class="chrt_ln">-->
+
+<!--</div>-->
+
+<div class="legend">
+    PRESSURE(psi) vs TIME
+
+
+    <table id="lgnd">
+        <tr valign="bottom">
+            <td width="60%"><label class="subtitle">Manifold Pressure</label></td>
+            <td width="40%"> <div class="m_div"></div></td>
+        </tr>
+        <tr valign="bottom">
+            <td><label class="subtitle">Accumulator Pressure</label></td>
+            <td> <div class="acc_div"></div></td>
+        </tr>
+        <tr valign="bottom">
+            <td><label class="subtitle">Annular Pressure</label></td>
+            <td> <div class="ann_div"></div></td>
+        </tr>
+
+        <tr valign="bottom">
+            <td><label class="subtitle">Rig Air Pressure</label></td>
+            <td> <div class="rig_div"></div></td>
+        </tr>
+        <tr valign="bottom">
+            <td><label class="subtitle">Shear Boost Pressure</label></td>
+            <td> <div class="shr_div"></div></td>
+        </tr>
+    </table>
+</div>
+
+
+<div class="f1">
+
+</div>
+
+<!--Alarm footer content goes to JS file-->
+<div class="f2" onclick="show_dialog()">
+</div>
+
+<div id="data" style="display:none;">
+</div>
+
+<img class="logo_div" src="png/sara_logo.png"/>
+<img src="svg/btm_arrow.svg" id="btm_arrow"/>
+
+<script src="/javascripts/jquery.min.js"></script>
+<script src="/javascripts/d3.v3.min.js" type="text/javascript"></script>
+<script src="/javascripts/iopctrl.js" type="text/javascript"></script>
+<script src="/javascripts/gauge.min.js" type="text/javascript"></script>
+<script src="/javascripts/guages.js" type="text/javascript"></script>
+<script type="text/javascript" src="fusn_v3.5/fusioncharts.js"></script>
+<script type="text/javascript" src="fusn_v3.5/fusioncharts.widgets.js"></script>
+<script src="socket.io/socket.io.js"></script>
+<script type="text/javascript" src="/javascripts/date.js"></script>
+<script type='text/javascript' src='/javascripts/jquery.simplemodal.js'></script>
+<script src="/datajs/t_alarm.js"></script>
+<script src="/datajs/Almarqu.js"></script>
+<script src="/datajs/gauges_data_1.js"></script>
+<script src="/datajs/gauges_data_2.js"></script>
+<script type="text/javascript" src="javascripts/animated_marq/jquery.textillate.js"></script>
+<script type="text/javascript" src="javascripts/animated_marq/jquery.fittext.js"></script>
+<script type="text/javascript" src="javascripts/animated_marq/jquery.lettering.js"></script>
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Sara Sae :: RT138</title>
+<!--for footer content Resources start-->
+<link href="/stylesheets/fonts.min.css" rel="stylesheet" type="text/css">
+<link href="/stylesheets/monthffaillog.min.css" rel="stylesheet" /> <!--page CSS-->
+<link href="/stylesheets/modeldialog.min.css" rel="stylesheet" />
+<link href="/stylesheets/alarm_button.min.css" rel="stylesheet" />
+<link href="/stylesheets/stylishscroll.min.css" rel="stylesheet" />
+<link href="/javascripts/animated_marq/animate.min.css" rel="stylesheet" />
+<!--for footer content Resources End-->
+
+</head>
+<body>
+<a href="/logpage" title="Back"><img class="back" src="/svg/back_arrow.svg"></a>
+<a href="/logout" title="Log out"><img class="log_out" src="/svg/logout.svg"></a>
+
+<div id="wrapper">
+
+<div id="tabContainer">
+<div class="tabs">
+    <ul>
+        <li id="tabHeader_1">FUNCTION FAIL LOGS</li>
+        <li id="tabHeader_2" >FUNCTION LOGS</li>
+
+    </ul>
+</div>
+<div class="tabscontent">
+<div class="tabpage" id="tabpage_1">
+
+<div id="content1" style="display: block;">
+    <div class="control">
+        <select id="trace1">
+
+
+        </select>
+
+        <select id="month1">
+            <option value="1">JANUARY</option>
+            <option value="2">FEBRUARY</option>
+            <option value="3">MARCH</option>
+            <option value="4">APRIL</option>
+            <option value="5">MAY</option>
+            <option value="6">JUNE</option>
+            <option value="7">JULY</option>
+            <option value="8">AUGUST</option>
+            <option value="9">SEPTEMBER</option>
+            <option value="10">OCTOBER</option>
+            <option value="11">NOVEMBER</option>
+            <option value="12">DECEMBER</option>
+        </select>
+
+        <select id="year1"></select>
+
+        <button id="btndetail1">Get Details</button>
+
+
+        <div class="legend">
+            <ul>
+                <li><div class="legend_1"></div></li>
+                <li class="legend_2">OPEN</li>
+                <!--<li class="legend_3">&nbsp;&nbsp</li>-->
+                <li><div class="legend_1_1"></div></li>
+                <li class="legend_2">CLOSE</li>
+            </ul>
+        </div>
+    </div>
+
+    <!--<div class="up_legend"><ul id="t_val1"></ul></div>-->
+    <label class="alrm_cnt" style="position: absolute;color: #808080;">ALARM COUNT</label>
+    <div  id="t1li_1" >0</div>
+    <div id="t1li_2">0</div>
+
+    <div id="t1li_3">0</div>
+    <div id="t1li_4" >0</div>
+
+    <div id="t1li_5" >0</div>
+    <div id="t1li_6" >0</div>
+
+    <div id="t1li_7" >0</div>
+    <div id="t1li_8" >0</div>
+
+    <div id="t1li_9">0</div>
+    <div id="t1li_10">0</div>
+
+    <div id="t1li_11">0</div>
+    <div id="t1li_12">0</div>
+
+    <div id="t1li_13">0</div>
+    <div id="t1li_14">0</div>
+
+    <div id="t1li_15">0</div>
+    <div id="t1li_16">0</div>
+
+    <div id="t1li_17">0</div>
+    <div id="t1li_18">0</div>
+
+    <div id="t1li_19">0</div>
+    <div id="t1li_20" >0</div>
+
+    <div id="t1li_21">0</div>
+    <div id="t1li_22">0</div>
+
+
+    <div id="t1li_23">0</div>
+    <div id="t1li_24">0</div>
+
+    <div id="t1li_25">0</div>
+    <div id="t1li_26">0</div>
+
+    <div id="t1li_27" >0</div>
+    <div id="t1li_28" >0</div>
+
+    <div id="t1li_29">0</div>
+    <div id="t1li_30">0</div>
+
+    <div id="t1li_31">0</div>
+    <div id="t1li_32">0</div>
+
+    <div id="t1li_33">0</div>
+    <div id="t1li_34">0</div>
+
+    <div id="t1li_35">0</div>
+    <div id="t1li_36">0</div>
+
+    <div id="t1li_37">0</div>
+    <div id="t1li_38">0</div>
+
+    <div id="t1li_39">0</div>
+    <div id="t1li_40">0</div>
+
+    <div id="t1li_41" >0</div>
+    <div id="t1li_42">0</div>
+
+    <div id="t1li_43" >0</div>
+    <div id="t1li_44" >0</div>
+
+    <div id="t1li_45">0</div>
+    <div id="t1li_46">0</div>
+
+    <div id="t1li_47">0</div>
+    <div id="t1li_48">0</div>
+
+    <div id="t1li_49">0</div>
+    <div id="t1li_50">0</div>
+
+    <div id="t1li_51">0</div>
+    <div id="t1li_52">0</div>
+
+    <div id="t1li_53">0</div>
+    <div id="t1li_54">0</div>
+
+    <div id="t1li_55">0</div>
+    <div id="t1li_56">0</div>
+
+    <div id="t1li_57">0</div>
+    <div id="t1li_58">0</div>
+
+
+    <div id="t1li_59">0</div>
+    <div id="t1li_60">0</div>
+
+    <div id="t1li_61">0</div>
+    <div id="t1li_62">0</div>
+
+    <div class="chart">
+        <div id="colm1">FusionCharts XT will load here!</div>
+        <div id="bop1">FusionCharts XT(Scatter)will load here!</div>
+    </div>
+</div>
+
+
+</div>
+<div class="tabpage" id="tabpage_2">
+    <div id="content2" style="display: none;">
+        <div class="control">
+            <select id="trace">
+            </select>
+
+            <select id="month">
+                <option value="1">JANUARY</option>
+                <option value="2">FEBRUARY</option>
+                <option value="3">MARCH</option>
+                <option value="4">APRIL</option>
+                <option value="5">MAY</option>
+                <option value="6">JUNE</option>
+                <option value="7">JULY</option>
+                <option value="8">AUGUST</option>
+                <option value="9">SEPTEMBER</option>
+                <option value="10">OCTOBER</option>
+                <option value="11">NOVEMBER</option>
+                <option value="12">DECEMBER</option>
+            </select>
+
+            <select id="year"></select>
+
+            <button id="btndetail">Get Details</button>
+
+
+            <div class="legend">
+                <ul>
+                    <li><div class="legend_1"></div></li>
+                    <li class="legend_2">OPEN</li>
+                    <!--<li class="legend_3">&nbsp;&nbsp</li>-->
+                    <li><div class="legend_1_1"></div></li>
+                    <li class="legend_2">CLOSE</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <label  class="alrm_cnt" style="position: absolute;color: #808080;">ALARM COUNT</label>
+
+
+        <div  id="tli_1" style=" ">0</div>
+        <div id="tli_2" style="">0</div>
+
+        <div id="tli_3" style=" ">0</div>
+        <div id="tli_4" style="">0</div>
+
+        <div id="tli_5" style=" ">0</div>
+        <div id="tli_6" style="">0</div>
+
+        <div id="tli_7" style="">0</div>
+        <div id="tli_8" style="">0</div>
+
+        <div id="tli_9" style=" ">0</div>
+        <div id="tli_10" style="">0</div>
+
+        <div id="tli_11" style=" ">0</div>
+        <div id="tli_12" style="">0</div>
+
+        <div id="tli_13" style=" ">0</div>
+        <div id="tli_14" style="">0</div>
+
+        <div id="tli_15" style=" ">0</div>
+        <div id="tli_16" style="">0</div>
+
+        <div id="tli_17" style=" ">0</div>
+        <div id="tli_18" style="">0</div>
+
+
+        <div id="tli_19" style="">0</div>
+        <div id="tli_20" style="">0</div>
+
+
+
+        <div id="tli_21" style=" ">0</div>
+        <div id="tli_22" style="">0</div>
+
+
+        <div id="tli_23" style=" ">0</div>
+        <div id="tli_24" style="">0</div>
+
+        <div id="tli_25" style=" ">0</div>
+        <div id="tli_26" style="">0</div>
+
+
+        <div id="tli_27" style=" ">0</div>
+        <div id="tli_28" style="">0</div>
+
+
+        <div id="tli_29" style=" ">0</div>
+        <div id="tli_30" style="">0</div>
+
+
+        <div id="tli_31" style=" ">0</div>
+        <div id="tli_32" style="">0</div>
+
+        <div id="tli_33" style="">0</div>
+        <div id="tli_34" style="">0</div>
+
+
+
+        <div id="tli_35" style=" ">0</div>
+        <div id="tli_36" style="">0</div>
+
+        <div id="tli_37" style=" ">0</div>
+        <div id="tli_38" style="">0</div>
+
+
+        <div id="tli_39" style=" ">0</div>
+        <div id="tli_40" style="">0</div>
+
+
+        <div id="tli_41" style=" ">0</div>
+        <div id="tli_42" style="">0</div>
+
+
+        <div id="tli_43" style=" ">0</div>
+        <div id="tli_44" style="">0</div>
+
+
+        <div id="tli_45" style=" ">0</div>
+        <div id="tli_46" style="">0</div>
+
+
+
+
+        <div id="tli_47" style="">0</div>
+        <div id="tli_48" style="">0</div>
+
+        <div id="tli_49" style=" ">0</div>
+        <div id="tli_50" style="">0</div>
+
+        <div id="tli_51" style=" ">0</div>
+        <div id="tli_52" style="">0</div>
+
+        <div id="tli_53" style=" ">0</div>
+        <div id="tli_54" style="">0</div>
+
+        <div id="tli_55" style=" ">0</div>
+        <div id="tli_56" style="">0</div>
+
+
+        <div id="tli_57" style=" ">0</div>
+        <div id="tli_58" style="">0</div>
+
+
+        <div id="tli_59" style=" ">0</div>
+        <div id="tli_60" style="">0</div>
+
+        <div id="tli_61" style="">0</div>
+        <div id="tli_62" style="">0</div>
+
+        <div class="chart">
+            <div id="colm" >FusionCharts XT will load here!</div>
+            <div id="bop" >FusionCharts XT(Scatter)will load here!</div>
+        </div>
+
+
+
+        <!--<div id="bop" style="height:700px; margin-top: 800px;position: absolute; width:1730px; overflow:hidden; ">FusionCharts XT(Scatter)will load here!</div>-->
+    </div>
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+<div class="f1"></div>
+<!--not showing div onclick so disable show_dialog()-->
+<!-- <div  style="display: block;" class="f2" onclick="show_dialog()"></div>-->
+<div  style="display: block;" class="f2"></div>
+
+<div id="data" style="display:none;">
+</div>
+
+<img class="logo_div" src="png/sara_logo.png"/>
+<img src="svg/btm_arrow.svg" id="btm_arrow"/>
+
+<div id="loading" style="display: block;">
+    <img id="loading-image" src="/png/ajax-loader.gif" alt="Loading..." />
+</div>
+
+<script src="/javascripts/jquery.min.js"></script>
+<script type="text/javascript" src="/FusionCharts/FusionCharts.js"></script>
+<script type="text/javascript" src="/FusionCharts/FusionCharts.jQueryPlugin.js"></script> <!-- this js used for create chart using JSON data-->
+<script src="/javascripts/tabs.js"></script>
+<script src="socket.io/socket.io.js"></script>
+<script type="text/javascript" src="/javascripts/date.js"></script>
+<script type='text/javascript' src='/javascripts/jquery.simplemodal.js'></script>
+<script src="/datajs/t_alarm.js"></script>
+<script src="/datajs/Almarqu.js"></script>
+<script src="/datajs/monthffaillog.js"></script>
+<script type="text/javascript" src="javascripts/animated_marq/jquery.textillate.js"></script>
+<script type="text/javascript" src="javascripts/animated_marq/jquery.fittext.js"></script>
+<script type="text/javascript" src="javascripts/animated_marq/jquery.lettering.js"></script>
+</body>
+</html>

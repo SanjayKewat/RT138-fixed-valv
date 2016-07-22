@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Sara Sae :: RT138</title>
+
+<link  rel="stylesheet" type="text/css" href="/stylesheets/jquery.datetimepicker.min.css"/>
+<link href="/stylesheets/fonts.min.css" rel="stylesheet" type="text/css">
+<link href="/stylesheets/presstrend.min.css" rel="stylesheet" /> <!--page CSS-->
+<!--for footer content Resources start-->
+<link href="/stylesheets/modeldialog.min.css" rel="stylesheet" />
+<link href="/stylesheets/alarm_button.min.css" rel="stylesheet" />
+<link href="/stylesheets/stylishscroll.min.css" rel="stylesheet" />
+<link href="/javascripts/animated_marq/animate.min.css" rel="stylesheet" />
+<!--for footer content Resources End-->
+
+</head>
+<body>
+
+<div id="main" style="display: block;">
+    <a href="/home"  title="Home"><img class="home" src="/svg/home.svg"></a>
+    <a href="/logout" title="Log out"><img class="log_out" src="/svg/logout.svg"></a>
+    <div class="header">PRESSURE LOGS</div>
+    <div class="control">EQUIPMENT&nbsp; <select id="equip_drp" class="drp"><option value="1">BOP CONTROL</option><option value="2">CHOKE CONSOLE</option></select> </div>
+    <div class="control2">FROM&nbsp; <input type="text" class="drp" id="txtfr"/>  </div>
+    <div class="control3">TO&nbsp; <input type="text" class="drp" id="txtto"/>  </div>
+    <div class="control4"> </div>
+    <button id="btn">Get Data</button>
+    <div class="titl">PRESSURE vs TIME</div>
+
+    <div class="lgnd">
+        <table id="lgnd_bop" width="100%">
+            <tr valign="middle">
+                <td><label class="subtitle">Manifold Pressure</label></td>
+                <td> <div class="mani_lgnd"></div></td>
+                <td><label class="subtitle">Accumulator Pressure</label></td>
+                <td> <div class="acc_lgnd"></div></td>
+            </tr>
+            <tr valign="middle">
+                <td><label class="subtitle">Annular Pressure</label></td>
+                <td> <div class="ann_lgnd"></div></td>
+                <td><label class="subtitle">Rig Air Pressure</label></td>
+                <td> <div class="bs_lgnd"></div></td>
+            </tr>
+        </table>
+        <table id="lgnd_chk" width="100%" style="display: none;">
+            <tr valign="middle">
+                <td><label class="subtitle">Drill Pipe Pressure</label></td>
+                <td> <div class="drll_lgnd"></div></td>
+                <td><label class="subtitle">Casing Pressure</label></td>
+                <td> <div class="csng_lgnd"></div></td>
+            </tr>
+
+        </table>
+    </div>
+
+    <div id="bop">
+    </div>
+
+    <!--footer content-->
+    <div class="f1"></div>
+    <!--not showing div onclick so disable show_dialog()-->
+    <!-- <div  style="display: block;" class="f2" onclick="show_dialog()"></div>-->
+    <div  style="display: block;" class="f2"></div>
+    <img class="logo_div" src="png/sara_logo.png"/>
+    <div id="data" style="display:none;"></div>
+
+    <img src="svg/btm_arrow.svg" id="btm_arrow"/>
+</div>
+
+<div id="loading" style="display: block;">
+    <img id="loading-image" src="/png/ajax-loader.gif" alt="Loading..." />
+</div>
+
+<script src="/javascripts/jquery.min.js"></script>
+<script type="text/javascript" src="/FusionCharts/FusionCharts.js"></script>
+<script type="text/javascript" src="/javascripts/jquery.datetimepicker.js"></script>
+<script src="socket.io/socket.io.js"></script>
+<script type="text/javascript" src="/javascripts/date.js"></script>
+<script type='text/javascript' src='/javascripts/jquery.simplemodal.js'></script>
+<script src="/datajs/t_alarm.js"></script>
+<script src="/datajs/Almarqu.js"></script>
+<script src="/datajs/presstrend.js"></script>
+<script type="text/javascript" src="javascripts/animated_marq/jquery.textillate.js"></script>
+<script type="text/javascript" src="javascripts/animated_marq/jquery.fittext.js"></script>
+<script type="text/javascript" src="javascripts/animated_marq/jquery.lettering.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Sara Sae :: RT138</title>
+
+    <link href="/stylesheets/fonts.min.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/home.min.css" rel="stylesheet" /> <!--page CSS-->
+    <!--for footer content Resources start-->
+    <link href="/stylesheets/modeldialog.min.css" rel="stylesheet" />
+    <link href="/stylesheets/alarm_button.min.css" rel="stylesheet" />
+    <link href="/stylesheets/stylishscroll.min.css" rel="stylesheet" />
+    <link href="/javascripts/animated_marq/animate.min.css" rel="stylesheet" />
+    <!--for footer content Resources End-->
+
+</head>
+<body>
+
+
+<a href="/rigdts">
+
+    <img style="display: block;" src="svg/rig.svg" id="rig" /></a>
+<!--<img src="svg/chole manifold-22.svg" id="chk" />-->
+
+<a href="/bop">
+    <img style="display: block;" src="svg/bop1.svg" id="bop" />
+</a>
+
+<a href="/chk">
+    <img style="display: block;" src="svg/choke.svg" id="chk"/></a>
+
+<img style="display: block;" src="svg/ground1-31.svg" id="ground1"> <!-- ground floor 1-->
+<img style="display: block;" src="svg/ground2-32.svg" id="ground2"> <!-- ground floor 1-->
+
+
+<!--<a href="/map">
+
+    <div class="large_rss"><img src="svg/All rig locations rectangle-63.svg" class="map"></div>
+    <div class="medium_rss">
+        <div class="map"><img style="margin-left: 13.292px;margin-top:15.608px;position: absolute;" src="svg/medium_map.svg">
+
+    </div> </div>
+</a>-->
+
+
+<a href="/logout" title="Log out"><img class="log_out" src="/svg/logout.svg"></a>
+
+<a href="/map">
+<div class="map">
+    <img class="map_img" src="svg/mapwitharrow.svg">
+    <span class="map_lbl">ALL RIG LOCATIONS</span>
+</div>
+</a>
+
+<a href="/ptrend">
+    <div class="p_log">
+        <img class="p_img" src="svg/pressure log logo-29.svg">
+        <span class="p_lbl">PRESSURE LOGS</span>
+    </div>
+</a>
+
+
+<!--<a href="/ptrend">
+    <div class="large_rss">
+        <img style="display: block;" src="svg/press_log.svg" class="p_log">
+    </div>
+    <div class="medium_rss"><div class="p_log"><img style="margin-left: 55.393px;margin-top:15.608px;position: absolute;" src="svg/medium_plog.svg"></div> </div>
+
+</a>-->
+
+<img src="svg/btm_arrow.svg" id="btm_arrow"/>
+<div  style="display: block;" class="f1">
+    <div style="float: left;">
+        <table style="width: 100%;text-align: center;margin-top: .8%;margin-left: 3.5%; color: #fff;">
+            <tr valign="middle">
+                <td><label id="cmp_lbl">COMPANY NAME</label></td>
+                <td>|</td>
+                <td>RIG NAME : <label id="rig_lbl">-20</label></td>
+                <td>|</td>
+                <td>OPERATOR : <label id="opr_lbl">ONGC</label></td>
+            </tr>
+        </table>
+    </div>
+    <div style="float: right;">
+        <table style="width: 100%;text-align: center;margin-top: .8%; color: #fff;">
+            <tr valign="middle">
+                <td>USER :<label id="usr">SANJAY</label></td>
+                <td>|</td>
+                <td>RUNNING DURATION :<label id="tme">1:32 24</label></td>
+                <td>|</td>
+                <td><label id="dttm">02/04/2014 11.50 AM</label></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!--Alarm footer content goes to JS file-->
+
+<!--not showing div onclick so disable show_dialog()-->
+<!-- <div  style="display: block;" class="f2" onclick="show_dialog()"></div>-->
+<div  style="display: block;" class="f2"></div>
+
+
+
+<div id="data" style="display:none;">
+</div>
+
+
+<img class="logo_div" src="png/sara_logo.png"/>
+
+
+<script src="/javascripts/jquery.min.js"></script>
+<script type="text/javascript" src="/javascripts/date.js"></script>
+<script src="socket.io/socket.io.js"></script>
+<script type='text/javascript' src='/javascripts/jquery.simplemodal.js'></script>
+<script type='text/javascript' src='/javascripts/jquery.simplemodal.js'></script>
+<script src="/datajs/t_alarm.js"></script>
+<script src="/datajs/Almarqu.js"></script>
+<script src="/datajs/home.js"></script>
+<script type="text/javascript" src="javascripts/animated_marq/jquery.textillate.js"></script>
+<script type="text/javascript" src="javascripts/animated_marq/jquery.fittext.js"></script>
+<script type="text/javascript" src="javascripts/animated_marq/jquery.lettering.js"></script>
+</body>
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sara Sae :: RT138</title>
+
+    <link  rel="stylesheet" type="text/css" href="/stylesheets/stylishscroll.min.css"/>
+    <link  rel="stylesheet" type="text/css" href="/stylesheets/fonts.min.css"/>
+    <link href="/stylesheets/bop.min.css" rel="stylesheet" /> <!--page CSS-->
+    <link href="/javascripts/animated_marq/animate.min.css" rel="stylesheet" />
+    <link href="/stylesheets/modeldialog.min.css" rel="stylesheet" />
+    <link href="/stylesheets/alarm_button.min.css" rel="stylesheet" />
+
+
+
+</head>
+    <body>
+
+    <!--gauges the actual ones-->
+<div class="abc">
+<div class="gg" >
+   <div class="big_cnv"><canvas id="myCanvas" class="gg" width="115px" height="60px" > </canvas></div>
+    <div class="small_cnv"><canvas id="myCanvas_s1" width="90px" height="47" class="gg"   > </canvas></div>
+    <span id="chartdiv" style="position:absolute;"></span>
+</div>
+<div class="gg2" >
+<div class="big_cnv"> <canvas id="myCanvas2" class="gg2" width="115px" height="60px" > </canvas></div>
+    <div class="small_cnv"><canvas id="myCanvas2_s1" width="90px" height="47" class="gg2"   > </canvas></div>
+    <span id="chartdiv2" style="position:absolute;"></span>
+</div>
+<div class="gg3" >
+<div class="big_cnv"> <canvas id="myCanvas3" class="gg3"  width="115px" height="60px"> </canvas></div>
+    <div class="small_cnv"><canvas id="myCanvas3_s1" width="90px" height="47" class="gg3"   > </canvas></div>
+    <span id="chartdiv3" style="position:absolute;"></span>
+</div>
+<div class="gg4">
+<div class="big_cnv"><canvas id="myCanvas4" class="gg4" width="115px" height="60px"> </canvas></div>
+    <div class="small_cnv"><canvas id="myCanvas4_s1" width="90px" height="47" class="gg4"   > </canvas></div>
+    <span id="chartdiv4" style="position:absolute;"></span>
+</div>
+<div class="gg5" >
+<div class="big_cnv"> <canvas id="myCanvas5" class="gg5"  width="115px" height="60px"> </canvas></div>
+    <div class="small_cnv"><canvas id="myCanvas5_s1" width="90px" height="47" class="gg5"   > </canvas></div>
+    <span id="chartdiv5" style="position:absolute;"></span>
+</div>
+
+
+<!-- <div class="home" >
+
+</div>-->
+<a  style="z-index: 100" href='/home'> <img class="home" style="z-index: 100"  src="svg/home.svg" />   </a>
+<!--def is A DEMO CLASS JUST TO position things absolutely-->
+<!--<div class="rsptme" style="position:absolute"><a href='/resptme'><img class="responsetime" src="svg/button-84.svg" /></a></div>-->
+
+<a href='/resptme'><!--<img class="responsetime" src="svg/button-84.svg" />-->
+<div class="responsetime">RESPONSE TIME</div>
+</a>
+<!-- 
+ <div id="ftable_cover2">
+                <table class="gauge_captionr" style="font-size:10.5px;margin-left:10px;">
+                <tr>
+                  <td style="border-right:0px solid;">
+                    <div style="height: 25px;width :60px;padding-left:5px;padding-top:5px;"><label>Rig Air</label></div>
+                  </td>               
+                </tr>
+
+
+              </table>
+      </div> -->
+
+         <div class="ftable_cover" style="display:block;position:absolute;background-color:#808080"></div>
+
+
+<!--text over the gauges-->
+<div class="ann_g"  >Annular Pressure</div>
+<div class="acc_g" >Accumulator Pressure</div>
+<div class="manifold_g" >Manifold Pressure</div>
+<div class="shearboost_g">Shear Boost Pressure</div>
+<div class="rigair_g" >Rig Air Pressure</div>
+
+
+
+
+
+
+<!--ring over the gauges-->
+
+<a href="/gauge?id=1" >
+
+
+    <div class="ann_shade " id="ann_shade" > </div>
+</a>
+
+<!--<div class="acc_shade"style="display:block;position: absolute " >-->
+ <a href="/gauge?id=2">
+
+
+    <div class="acc_shade" id="acc_shade" ></div>
+ </a>
+<!--</div>-->
+
+<a href="/gauge?id=3" >
+
+
+    <div class="manifold_shade" id="manifold_shade"  ></div>
+</a>
+
+<!--<div class="shearboost_shade"  style="display:block;position: absolute ">-->
+    <a href="/gauge?id=4" >
+    <div class="shearboost_shade" id="shearboost_shade" ></div></a>
+
+
+    <a href="/gauge?id=5" >
+
+
+    <div class="rigair_shade" id="rigair_shade" ></div>
+    </a>
+
+
+<a href="/logpage" >
+<div class="valve-div" id="valve-div" style="position:absolute">
+
+</div></a>
+
+<a href="/logpage" ><!--<div class="valve-div1" style="position:absolute">--><div class="valve-div1" id="valve-div1" style="position:absolute">
+
+<!--</div>--></div></a>
+
+<a href="/pumpalm" >
+<div  id="motor_hover">
+
+</div>
+</a>
+
+      <div class="by">
+          <div id="val1_0" style="display:block;"><img class="liver"   src="svg/grey valve with stand-12.svg" /></div>
+          <div id="val1_1" style="display:none;"><img class="liver"   src="svg/red valve with stand-14_alarm.svg" /></div>
+          <div id="val1_2" style="display:none;"><img class="liver"   src="svg/red valve with stand-14.svg" /></div>
+          <div id="val1_3" style="display:none;"><img class="liver"  src="svg/green-alarm.svg" /></div>
+          <div id="val1_4" style="display:none;"><img class="liver"   src="svg/green valve with stand-15.svg" /></div>
+          <div id="val1_5" style="display:none;"><img class="liver"   src="svg/center-alarm.svg" /></div>
+
+      </div>
+<div  class="by_f" >Bypass</div>
+       <div class="sp" style="">          
+          <div id="count1_0" style="display:block;"><img class="liver" src="svg/grey valve with stand-12.svg" /></div>
+          <div id="count1_1" style="display:none;"><img class="liver" src="svg/red valve with stand-14_alarm.svg" /></div>
+          <div id="count1_2" style="display:none;"><img class="liver" src="svg/red valve with stand-14.svg" /></div>
+          <div id="count1_3" style="display:none;"><img class="liver" src="svg/green-alarm.svg" /></div>
+          <div id="count1_4" style="display:none;"><img class="liver" src="svg/green valve with stand-15.svg" /></div>
+          <div id="count1_5" style="display:none;"><img class="liver" src="svg/center-alarm.svg" /></div>
+           <!-- <div  class="sp_f" >Spare 1</div>-->
+
+       </div>
+<div class="sp_f" >Spare 1</div>
+       <div class="hc2" style="">          
+           <div id="count2_0" style="display:block;"><img class="liver" src="svg/grey valve with stand-12.svg" /></div>
+          <div id="count2_1" style="display:none;"><img class="liver" src="svg/red valve with stand-14_alarm.svg" /></div>
+          <div id="count2_2" style="display:none;"><img class="liver" src="svg/red valve with stand-14.svg" /></div>
+          <div id="count2_3" style="display:none;"><img class="liver" src="svg/green-alarm.svg" /></div>
+          <div id="count2_4" style="display:none;"><img class="liver" src="svg/green valve with stand-15.svg" /></div>
+          <div id="count2_5" style="display:none;"><img class="liver" src="svg/center-alarm.svg" /></div>
+
+       </div>
+<div  class="hc2_f" >HCR 2</div>
+       <div class="hc1" style="">          
+          <div id="count3_0" style="display:block;"><img class="liver" src="svg/grey valve with stand-12.svg" /></div>
+          <div id="count3_1" style="display:none;"><img class="liver" src="svg/red valve with stand-14_alarm.svg" /></div>
+          <div id="count3_2" style="display:none;"><img class="liver" src="svg/red valve with stand-14.svg" /></div>
+          <div id="count3_3" style="display:none;"><img class="liver" src="svg/green-alarm.svg" /></div>
+          <div id="count3_4" style="display:none;"><img class="liver" src="svg/green valve with stand-15.svg" /></div>
+          <div id="count3_5" style="display:none;"><img class="liver" src="svg/center-alarm.svg" /></div>
+
+       </div>
+<div  class="hc1_f" >HCR 1</div>
+       <div class="chk2" style="">          
+          <div id="count4_0" style="display:block;"><img class="liver" src="svg/grey valve with stand-12.svg" /></div>
+          <div id="count4_1" style="display:none;"><img class="liver" src="svg/red valve with stand-14_alarm.svg" /></div>
+          <div id="count4_2" style="display:none;"><img class="liver" src="svg/red valve with stand-14.svg" /></div>
+          <div id="count4_3" style="display:none;"><img class="liver" src="svg/green-alarm.svg" /></div>
+          <div id="count4_4" style="display:none;"><img class="liver" src="svg/green valve with stand-15.svg" /></div>
+          <div id="count4_5" style="display:none;"><img class="liver" src="svg/center-alarm.svg" /></div>
+
+       </div>
+<div  class="chk2_f" >Choke Line 2</div>
+       <div class="kl2">         
+          <div id="count6_0" style="display:block;"><img class="liver" src="svg/grey valve with stand-12.svg" /></div>
+          <div id="count6_1" style="display:none;"><img class="liver" src="svg/red valve with stand-14_alarm.svg" /></div>
+          <div id="count6_2" style="display:none;"><img class="liver" src="svg/red valve with stand-14.svg" /></div>
+          <div id="count6_3" style="display:none;"><img class="liver" src="svg/green-alarm.svg" /></div>
+          <div id="count6_4" style="display:none;"><img class="liver" src="svg/green valve with stand-15.svg" /></div>
+          <div id="count6_5" style="display:none;"><img class="liver" src="svg/center-alarm.svg" /></div>
+
+       </div>
+<div  class="kl2_f" >Kill Line 2</div>
+       <div class="chk1" style="">          
+         <div id="count0_0" style="display:block;"><img class="liver" src="svg/grey valve with stand-12.svg" /></div>
+          <div id="count0_1" style="display:none;"><img class="liver" src="svg/red valve with stand-14_alarm.svg" /></div>
+          <div id="count0_2" style="display:none;"><img class="liver" src="svg/red valve with stand-14.svg" /></div>
+          <div id="count0_3" style="display:none;"><img class="liver" src="svg/green-alarm.svg" /></div>
+          <div id="count0_4" style="display:none;"><img class="liver" src="svg/green valve with stand-15.svg" /></div>
+          <div id="count0_5" style="display:none;"><img class="liver" src="svg/center-alarm.svg" /></div>
+
+       </div>
+<div  class="chk1_f" >Choke Line 1</div>
+        <div id="bottom_valves" style="">
+         <div id="valve_part2" style="">
+             <div class="kl1" style="">
+                  <div id="count2_1_0" style="display:block;"><img class="liver" src="svg/grey valve with stand-12.svg" /></div>
+                  <div id="count2_1_1" style="display:none;"><img class="liver" src="svg/red valve with stand-14_alarm.svg" /></div>
+                  <div id="count2_1_2" style="display:none;"><img class="liver" src="svg/red valve with stand-14.svg" /></div>
+                  <div id="count2_1_3" style="display:none;"><img class="liver" src="svg/green-alarm.svg" /></div>
+                  <div id="count2_1_4" style="display:none;"><img class="liver" src="svg/green valve with stand-15.svg" /></div>
+                  <div id="count2_1_5" style="display:none;"><img class="liver" src="svg/center-alarm.svg" /></div>
+
+             </div>
+             <div  class="kl1_f" >Kill Line 1</div>
+             <div class="ppm3" style="">          
+                  <div id="valv2_1_0" style="display:block;"><img class="liver" src="svg/grey valve with stand-12.svg" /></div>
+                  <div id="valv2_1_1" style="display:none;"><img class="liver" src="svg/red valve with stand-14_alarm.svg" /></div>
+                  <div id="valv2_1_2" style="display:none;"><img class="liver" src="svg/red valve with stand-14.svg" /></div>
+                  <div id="valv2_1_3" style="display:none;"><img class="liver" src="svg/green-alarm.svg" /></div>
+                  <div id="valv2_1_4" style="display:none;"><img class="liver" src="svg/green valve with stand-15.svg" /></div>
+                  <div id="valv2_1_5" style="display:none;"><img class="liver" src="svg/center-alarm.svg" /></div>
+
+             </div>
+             <div  class="ppm3_f" >Pipe Ram 3</div>
+            <div class="ppm2" style="">          
+                  <div id="count2_2_0" style="display:block;"><img class="liver" src="svg/grey valve with stand-12.svg" /></div>
+                  <div id="count2_2_1" style="display:none;"><img class="liver" src="svg/red valve with stand-14_alarm.svg" /></div>
+                  <div id="count2_2_2" style="display:none;"><img class="liver" src="svg/red valve with stand-14.svg" /></div>
+                  <div id="count2_2_3" style="display:none;"><img class="liver" src="svg/green-alarm.svg" /></div>
+                  <div id="count2_2_4" style="display:none;"><img class="liver" src="svg/green valve with stand-15.svg" /></div>
+                  <div id="count2_2_5" style="display:none;"><img class="liver" src="svg/center-alarm.svg" /></div>
+
+            </div>
+             <div  class="ppm2_f" >Pipe Ram 2</div>
+            <div class="bs" style="">         
+               <div id="count2_3_0" style="display:block;"><img class="liver" src="svg/grey valve with stand-12.svg" /></div>
+                  <div id="count2_3_1" style="display:none;"><img class="liver" src="svg/red valve with stand-14_alarm.svg" /></div>
+                  <div id="count2_3_2" style="display:none;"><img class="liver" src="svg/red valve with stand-14.svg" /></div>
+                  <div id="count2_3_3" style="display:none;"><img class="liver" src="svg/green-alarm.svg" /></div>
+                  <div id="count2_3_4" style="display:none;"><img class="liver" src="svg/green valve with stand-15.svg" /></div>
+                  <div id="count2_3_5" style="display:none;"><img class="liver" src="svg/center-alarm.svg" /></div>
+
+            </div>
+             <div  class="bs_f" >Blind/Shear</div>
+            <div class="ppm1" style="">          
+                 <div id="count2_4_0" style="display:block;"><img class="liver" src="svg/grey valve with stand-12.svg" /></div>
+                  <div id="count2_4_1" style="display:none;"><img class="liver" src="svg/red valve with stand-14_alarm.svg" /></div>
+                  <div id="count2_4_2" style="display:none;"><img class="liver" src="svg/red valve with stand-14.svg" /></div>
+                  <div id="count2_4_3" style="display:none;"><img class="liver" src="svg/green-alarm.svg" /></div>
+                  <div id="count2_4_4" style="display:none;"><img class="liver" src="svg/green valve with stand-15.svg" /></div>
+                  <div id="count2_4_5" style="display:none;"><img class="liver" src="svg/center-alarm.svg" /></div>
+
+            </div>
+             <label  class="ppm1_f" >Pipe Ram 1</label>
+            <div class="ann" style="">
+                  <div id="count2_5_0" style="display:block;"><img class="liver" src="svg/grey valve with stand-12.svg" /></div>
+                  <div id="count2_5_1" style="display:none;"><img class="liver" src="svg/red valve with stand-14_alarm.svg" /></div>
+                  <div id="count2_5_2" style="display:none;"><img class="liver" src="svg/red valve with stand-14.svg" /></div>
+                  <div id="count2_5_3" style="display:none;"><img class="liver" src="svg/green-alarm.svg" /></div>
+                  <div id="count2_5_4" style="display:none;"><img class="liver" src="svg/green valve with stand-15.svg" /></div>
+                  <div id="count2_5_5" style="display:none;"><img class="liver" src="svg/center-alarm.svg" /></div>
+
+             </div>
+             <div  class="ann_f" >Annular</div>
+        </div>
+    </div>
+
+       <div class="ta" style="display:block;position:absolute;"><img class="ta" src="svg/2motors4pumps(both grey)-18.svg" />  </div>
+
+
+              <img class="light_panel1"  style="display:block;position:absolute;" src="svg/mode1-35.svg" />      
+
+      <div class="base_tank">
+         <div id="tank_0_0" style="display:block;"></div>
+         <div id="tank_0_1" style="display:none;"><img class="base_img" src="svg/tank-88.svg" /></div>
+    </div>
+
+       <div class="motor1">
+         <div id="tank_off" style="display:block;position:absolute;"></div>
+         <div id="tank_light0" style="display:none;position:absolute;"><img class="motor1"  src="svg/green-80.svg" /></div>
+          <div id="tank_light01" style="display:none;position:absolute;"><img  class="motor1"src="svg/pump-alarm-slow.svg" /></div>
+         </div>
+       <div class="motor2">
+           <div id="tank_off2" style="display:block; position:absolute;"></div>
+         <div id="tank_light1" style="display:none;position:absolute;"><img class="motor2" src="svg/green-80.svg" /></div>
+          <div id="tank_light11" style="display:none;position:absolute;"><img class="motor2" src="svg/pump-alarm-slow.svg" /></div>
+         </div>
+
+           <div id="tank_status1" ></div>
+
+       <div id="tank_status2"></div>
+
+       <div class="acc">
+        <div id="acc_0_0" style="display:block;"><img class="acc" src="svg/cylinders-1.svg" /></div>
+        <div id="acc_0_1" style="display:none;"><img class="acc" src="svg/cylinders-11.svg" /></div>
+    </div>
+       <div class="pipe">
+        <div id="manifold_div_0" style="display:block;"><img class="pipe" src="svg/manifold BOP 1+11 grey-55.svg" /></div>
+        <div id="manifold_div_1" style="display:none;"><img  class="pipe" src="svg/manifold 1+11 orange.svg" /></div>
+    </div>
+
+
+
+
+    <!--<div class="baselinevalue"><img  src="svg/button-85.svg" /></div>-->
+  
+      <div style="display: none">
+
+      </div>
+
+<div class="light1" style="display:none;">
+    <img class="light1" src="svg/green indicator-83.svg" />
+</div>
+<div class="light2" style="display:none;">
+    <img class="light2" src="svg/green indicator-83.svg" />
+</div>
+<div class="light3" style="display:none;">
+    <img class="light3" src="svg/green indicator-83.svg" />
+</div>
+<div class="light4" style="display: none">
+    <img class="light4" src="svg/green indicator-83.svg" />
+</div>
+
+
+         <img class="gaugePanel1"  src="svg/background of pressure guages-28.svg" />
+
+
+         <img class="gaugePanel2" src="svg/rigair_background.svg" />
+
+
+<a href="/logout" title="Log out"><img class="log_out" src="/svg/logout.svg"/></a>
+    <!--Alarm footer content goes to JS file-->
+
+    </div>
+
+       <div class="f1" style="display: block;" ></div>
+
+        <!--not showing div onclick so disable show_dialog()-->
+   <!-- <div  style="display: block;" class="f2" onclick="show_dialog()"></div>-->
+    <div  style="display: block;" class="f2"></div>
+
+    <div id="data" style="display:none;">
+    </div>
+<!--<div class="logo_div">-->
+    <img class="logo_div" src="png/sara_logo.png"/>
+<!--</div>-->
+
+<!--<a href="/ftest">
+&lt;!&ndash;<img class="ftest_btn" src="svg/ftest_btn.svg"/>&ndash;&gt;
+    <div class="ftest_btn">FUNCTION TEST</div>
+</a>-->
+
+<img src="svg/btm_arrow.svg" id="btm_arrow"/>
+
+    <script src="/javascripts/d3.v3.min.js" type="text/javascript"></script>
+    <script src="/javascripts/iopctrl.js" type="text/javascript"></script>
+    <script src="/javascripts/jquery.min.js"></script>
+    <script src="/javascripts/gauge.min.js" type="text/javascript"></script>
+    <script src="/javascripts/guages.js" type="text/javascript"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/datajs/rt.js"></script>
+    <script type="text/javascript" src="/javascripts/date.js"></script>
+    <script type='text/javascript' src='/javascripts/jquery.simplemodal.js'></script>
+    <script src="/datajs/t_alarm.js"></script>
+    <script src="/datajs/Almarqu.js"></script>
+    <script src="/datajs/realtime_bop_data.js"></script>
+    <script src="/datajs/bop_gauge_design.js"></script>
+    <script type="text/javascript" src="javascripts/animated_marq/jquery.textillate.js"></script>
+    <script type="text/javascript" src="javascripts/animated_marq/jquery.fittext.js"></script>
+    <script type="text/javascript" src="javascripts/animated_marq/jquery.lettering.js"></script>
+
+
+    </body>
+
+</html>
+       

@@ -1,0 +1,307 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+var fs = require('fs');
+
+//below comment this line for https port, uncomment if used
+//var privateKey  = fs.readFileSync('C:/xampp/apache/conf/ssl.key/server.key', 'utf8');
+//var certificate = fs.readFileSync('C:/xampp/apache/conf/ssl.crt/server.crt', 'utf8');
+//var credentials = {key: privateKey, cert: certificate, requestCert: true};
+
+var app = require('../app');
+var debug = require('debug')('rest-api-new-way-rt138:server');
+var http = require('http').Server(app);
+//var https = require('https').Server(credentials,app);
+var io = require('socket.io')(http);
+//io = require('socket.io')(https);
+var fs = require('fs'),
+    mysql = require('mysql'),
+    connectionsArray = [],
+    POLLING_INTERVAL = 1000,
+    pollingTimer;
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+var port = normalizePort(process.env.PORT || '2000');
+app.set('port', port);
+
+/**
+ * Create HTTP server.
+ */
+
+//var server = http.createServer(app);
+
+/**
+ * Create HTTPS server.
+ */
+
+
+
+
+/*
+ * REAL TIME SOCKET PART START HERE
+ *
+ * HERE IT IS THE COOL PART
+ * This function loops on itself since there are sockets connected to the page
+ * sending the result of the database query after a constant interval
+ *
+ */
+
+var pollingLoop = function() {
+
+ // Doing the database query
+
+ var query = connection.query('SELECT * FROM alarm_table'),//reading value for current alarm.
+ users = []; // array to store alarm data
+
+ // setting the query listeners
+ query
+ .on('error', function (err) {
+ // Handle error, and 'end' event will be emitted after this as well
+ console.log('Error while reading Today Alarms table data : '+err);
+ updateSockets(err);
+ })
+ .on('result', function (user) {
+ // it fills our array looping on each user row inside the db
+ users.push(user);
+ })
+ .on('end', function () {
+ // loop on itself only if there are sockets still connected
+ if (connectionsArray.length) {
+ pollingTimer = setTimeout(pollingLoop, POLLING_INTERVAL);
+
+ updateSockets({
+ users: users
+ });
+ }
+ });
+ };
+
+ var current_poll=function(){
+
+ var currt_query = connection.query('SELECT * FROM current_table'),//reading value for current data.
+ current_data = []; // array to store alarm data
+
+ // setting the query listeners
+ currt_query
+ .on('error', function (err) {
+ // Handle error, and 'end' event will be emitted after this as well
+ console.log('Error while reading Current table data : '+err);
+ current_sockets(err);
+ })
+ .on('result', function (c_data) {
+ // it fills our array looping on each user row inside the db
+ current_data.push(c_data);
+ })
+ .on('end', function () {
+ // loop on itself only if there are sockets still connected
+ if (connectionsArray.length) {
+ pollingTimer = setTimeout(current_poll, POLLING_INTERVAL);
+
+ current_sockets({
+ curr_data: current_data
+ });
+ }
+ });
+ };
+
+ var map_poll=function(){
+
+ var map_query = connection.query('SELECT * FROM rig_master'),//reading value for Map data.
+ map_data = []; // array to store alarm data
+
+ // setting the query listeners
+ map_query
+ .on('error', function (err) {
+ // Handle error, and 'end' event will be emitted after this as well
+ console.log('Error while reading Map data : '+err);
+ map_sockets(err);
+ })
+ .on('result', function (m_data) {
+ // it fills our array looping on each user row inside the db
+ map_data.push(m_data);
+ })
+ .on('end', function () {
+ // loop on itself only if there are sockets still connected
+ if (connectionsArray.length) {
+ pollingTimer = setTimeout(map_poll, POLLING_INTERVAL);
+
+ map_sockets({
+ map_data: map_data
+ });
+ }
+ });
+ };
+
+ var response_poll=function(){
+
+ var rsp_query = connection.query('SELECT * FROM response_realtime'),//reading value for Map data.
+ rsp_data = []; // array to store alarm data
+
+ // setting the query listeners
+ rsp_query
+ .on('error', function (err) {
+ // Handle error, and 'end' event will be emitted after this as well
+ console.log('Error while reading Map data : '+err);
+ rsp_sockets(err);
+ })
+ .on('result', function (m_data) {
+ // it fills our array looping on each user row inside the db
+ rsp_data.push(m_data);
+ })
+ .on('end', function () {
+ // loop on itself only if there are sockets still connected
+ if (connectionsArray.length) {
+ pollingTimer = setTimeout(response_poll, POLLING_INTERVAL);
+
+ rsp_sockets({
+ response_data: rsp_data
+ });
+ }
+ });
+ };
+
+ // creating a new websocket to keep the content updated without any AJAX request
+ io.on('connection', function(socket) {
+
+ console.log('Number of connections:' + connectionsArray.length);
+ // starting the loop only if at least there is one user connected
+ if (!connectionsArray.length) {
+ pollingLoop();
+ current_poll();
+ map_poll();
+ response_poll();
+ }
+
+ socket.on('disconnect', function() {
+ var socketIndex = connectionsArray.indexOf(socket);
+ console.log('socket = ' + socketIndex + ' disconnected');
+ if (socketIndex >= 0) {
+ connectionsArray.splice(socketIndex, 1);
+ }
+ });
+
+
+ setTimeout(function(){
+ socket.send("Hello World");
+ }, 1000);
+
+ console.log('A new socket is connected!');
+ connectionsArray.push(socket);
+
+ });
+
+ var updateSockets = function(data) {
+ // adding the time of the last update
+ data.time = new Date();
+ // sending new data to all the sockets connected
+ connectionsArray.forEach(function(tmpSocket) {
+ tmpSocket.volatile.emit('notification', data);
+ });
+ };
+
+ var current_sockets = function(data) {
+ // adding the time of the last update
+ data.time = new Date();
+ // sending new data to all the sockets connected
+ connectionsArray.forEach(function(tmpSocket) {
+ tmpSocket.volatile.emit('current_data', data);
+ });
+ };
+
+ var map_sockets = function(data) {
+ // adding the time of the last update
+ data.time = new Date();
+ // sending new data to all the sockets connected
+ connectionsArray.forEach(function(tmpSocket) {
+ tmpSocket.volatile.emit('map_data', data);
+ });
+ };
+
+ var rsp_sockets = function(data) {
+ // adding the time of the last update
+ data.time = new Date();
+ // sending new data to all the sockets connected
+ connectionsArray.forEach(function(tmpSocket) {
+ tmpSocket.volatile.emit('rsp_data', data);
+ });
+ };
+
+
+// REAL TIME SOCKET PART END HERE
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+http.listen(port);
+http.on('error', onError);
+http.on('listening', onListening);
+
+//https.listen(443);
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort(val) {
+    var port = parseInt(val, 10);
+
+    if (isNaN(port)) {
+        // named pipe
+        return val;
+    }
+
+    if (port >= 0) {
+        // port number
+        return port;
+    }
+
+    return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+    if (error.syscall !== 'listen') {
+        throw error;
+    }
+
+    var bind = typeof port === 'string'
+        ? 'Pipe ' + port
+        : 'Port ' + port;
+
+    // handle specific listen errors with friendly messages
+    switch (error.code) {
+        case 'EACCES':
+            console.error(bind + ' requires elevated privileges');
+            process.exit(1);
+            break;
+        case 'EADDRINUSE':
+            console.error(bind + ' is already in use');
+            process.exit(1);
+            break;
+        default:
+            throw error;
+    }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening() {
+    var addr = http.address();
+    var bind = typeof addr === 'string'
+        ? 'pipe ' + addr
+        : 'port ' + addr.port;
+    debug('Listening on ' + bind);
+
+    console.log('Express server listening on port '+app.get('port'));
+}

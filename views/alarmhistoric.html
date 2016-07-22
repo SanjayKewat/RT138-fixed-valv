@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Sara Sae :: RT138</title>
+    <link  rel="stylesheet" type="text/css" href="/stylesheets/jquery.datetimepicker.min.css"/>
+    <link href="/stylesheets/fonts.min.css" rel="stylesheet" type="text/css">
+	<link  rel="stylesheet" type="text/css" href="/stylesheets/stylishscroll.min.css"/>
+    <link href="/stylesheets/alarmhistoric.min.css" rel="stylesheet" /> <!--page CSS-->
+    <!--for footer content Resources start-->
+	<link href="/javascripts/animated_marq/animate.min.css" rel="stylesheet" />
+    <link href="/stylesheets/modeldialog.min.css" rel="stylesheet" />
+    <link href="/stylesheets/alarm_button.min.css" rel="stylesheet" />
+    <link href="/stylesheets/stylishscroll.min.css" rel="stylesheet" />	<!--for footer content Resources End-->
+</head>
+<body>
+<a href="/home" title="Home"><img  class="home" src="/svg/home.svg"></a>
+<a href="/logout" title="Log out"><img class="log_out" src="/svg/logout.svg"></a>
+<label class="head">ALARM HISTORY</label>
+<label class="daterng">From </label>
+<input type="text" id="txtfr"/>
+<label class="daterng_1">To :</label> <input type="text" id="txtto"/>
+<button id="btn">Get Details</button>
+
+
+<div class="content">
+    <table id="main_tab" style="width: 100%;">
+        <tr>
+            <td class="tr_back">Valve Alarms</td>
+            <td>
+                <div class="tabcont">
+                <table id="val_alarm" style="width:100%;">
+                    <thead>
+                    <tr >
+                        <th data-sort="int" title="Click to sort by Sr.No" style="border-left: none;">Sr.No</th>
+                        <th data-sort="moveBlanks" data-sort-desc="moveBlanksDesc"  title="Click to sort by Alarm Name">Alarm Name</th>
+
+                        <th data-sort="int" title="Click to sort by Date & Time">Date & Time</th>
+                        <th data-sort="int" title="Click to sort by Alarm Clear Date & Time">Alarm Clear Date & Time</th>
+                    </tr>
+                    </thead>
+                    <tbody id="val_alarm_data">
+                    </tbody>
+                </table>
+                    </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="tr_back">Other Alarms</td>
+            <td>
+                <div class="tabcont">
+                <table id="oth_alarm" style="width:100%;">
+                    <thead>
+                    <tr >
+                        <th data-sort="int" title="Click to sort by Sr.No" style="border-left: none;">Sr.No</th>
+                        <th data-sort="moveBlanks" data-sort-desc="moveBlanksDesc"  title="Click to sort by Alarm Name">Alarm Name</th>
+
+                        <th data-sort="int" title="Click to sort by Date & Time">Date & Time</th>
+                        <th data-sort="int" title="Click to sort by Alarm Clear Date & Time">Alarm Clear Date & Time</th>
+                    </tr>
+                    </thead>
+                    <tbody id="oth_alarm_data">
+                    </tbody>
+                </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+    <div class="f1"></div>
+<!--not showing div onclick so disable show_dialog()-->
+<!-- <div  style="display: block;" class="f2" onclick="show_dialog()"></div>-->
+<div  style="display: block;" class="f2"></div>
+<img class="logo_div" src="png/sara_logo.png"/>
+    <div id="data" style="display:none;"></div>
+
+<div id="loading" style="display: block;">
+    <img id="loading-image" src="/png/ajax-loader.gif" alt="Loading..." />
+</div>
+
+<script src="/javascripts/jquery.min.js"></script>
+<script type="text/javascript" src="/javascripts/stupidtable.js?dev"></script>
+<script type="text/javascript" src="/javascripts/jquery.datetimepicker.js"></script>
+<script src="socket.io/socket.io.js"></script>
+<script type="text/javascript" src="/javascripts/date.js"></script>
+<script type='text/javascript' src='/javascripts/jquery.simplemodal.js'></script>
+<script src="/datajs/t_alarm.js"></script>
+<script src="/datajs/Almarqu.js"></script>
+<script src="/datajs/alarmhistoric.js"></script>
+<script type="text/javascript" src="javascripts/animated_marq/jquery.textillate.js"></script>
+<script type="text/javascript" src="javascripts/animated_marq/jquery.fittext.js"></script>
+<script type="text/javascript" src="javascripts/animated_marq/jquery.lettering.js"></script>
+</body>
+</html>

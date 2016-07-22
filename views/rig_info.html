@@ -1,0 +1,242 @@
+
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Sara Sae :: RT138</title>
+<link href="/stylesheets/fonts.min.css" rel="stylesheet" type="text/css">
+<link  rel="stylesheet" type="text/css" href="/stylesheets/stylishscroll.min.css"/>
+<link href="/stylesheets/rig_info.min.css" rel="stylesheet" /> <!--page CSS-->
+<!--for footer content Resources start-->
+<link href="/javascripts/animated_marq/animate.min.css" rel="stylesheet" />
+<link href="/stylesheets/modeldialog.min.css" rel="stylesheet" />
+<link href="/stylesheets/alarm_button.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+<div id="main" style="">
+    <a href="/home" title="Home"><img src="/svg/home.svg" class="home"></a>
+    <a href="/logout" title="Log out"><img class="log_out" src="/svg/logout.svg"></a>
+    <div id="wrapper">
+
+        <div id="tabContainer">
+            <div class="tabs">
+                <ul>
+                    <li id="tabHeader_1">RIG DETAILS</li>
+                    <!--<li id="tabHeader_2">BOP STACK CONFIGURATION</li>-->
+                    <li id="tabHeader_3">PUMP SETTINGS</li>
+                    <li id="tabHeader_4">BASELINE SETTINGS</li>
+                </ul>
+            </div>
+            <div class="tabscontent">
+                <div class="tabpage" id="tabpage_1">
+                    <div id="content1" style="display: block;">
+                        <hr class="line">
+
+                        <label class="labels_1" >Customer Name</label>
+
+                        <label class="labels_2">Location</label>
+
+                        <label class="labels_3" >Coordinate</label>
+
+                        <label class="labels_4" >Rig No.</label>
+
+                        <label class="labels_5" >Rig Name</label>
+						<label class="tb_1" id="one"></label>
+						<label class="tb_2" id="two"></label>
+						<label class="tb_3" id="three"></label>
+						<label class="tb_4" id="four"></label>
+						<label class="tb_5" id="five"></label>
+                                              
+
+                        <hr class="line_1">
+
+                    </div></div>
+                <!--<div class="tabpage" id="tabpage_2">-->
+                    <!--<div id="content2" style="display: none;">-->
+                        <!--<div class="dropdown1"><select  id="dropdown1">-->
+                            <!--<option value="1">BOP STACK-1</option>-->
+                            <!--<option value="2">BOP STACK-2</option>-->
+                            <!--<option value="3">BOP STACK-3</option>-->
+                            <!--<option value="4">BOP STACK-4</option>-->
+                        <!--</select>-->
+                        <!--</div>-->
+
+                        <!--<section id="bop_sec" class="">-->
+                            <!--<div class="container">-->
+                                <!--<table class="scroll">-->
+                                    <!--<thead>-->
+                                    <!--<tr  style="border-bottom: 1px solid #000;height: 40px;vertical-align: middle;">-->
+                                        <!--<th>-->
+                                            <!--VALVE NAME-->
+                                        <!--</th>-->
+                                        <!--<th>-->
+                                            <!--MAKE-->
+                                        <!--</th>-->
+                                        <!--<th>-->
+                                            <!--MODEL-->
+                                        <!--</th>-->
+                                        <!--<th>-->
+                                            <!--BORE SIZE-->
+                                        <!--</th>-->
+                                        <!--<th>-->
+                                            <!--MAX.WORKING PRESSURE-->
+
+                                        <!--</th>-->
+                                        <!--<th>-->
+                                            <!--OPERATING PRESSURE-->
+
+                                        <!--</th>-->
+                                        <!--<th>-->
+                                            <!--GALLONS TO CLOSE-->
+
+                                        <!--</th>-->
+                                        <!--<th>-->
+                                            <!--GALLONS TO OPEN-->
+
+                                        <!--</th>-->
+                                    <!--</tr>-->
+                                    <!--</thead>-->
+                                    <!--<tbody id="bop_stng">-->
+
+                                    <!--</tbody>-->
+                                <!--</table>-->
+                            <!--</div>-->
+                        <!--</section>-->
+
+                        <!--</div></div>-->
+
+                <div class="tabpage" id="tabpage_3">
+                    <div id="content3" style="display: none;">
+                        <hr class="line_2">
+
+                        <!--<label class="labels1_1" style="">Pump start pressure</label>-->
+
+                        <!--<label class="labels1_2" style="">Pump stop pressure</label>-->
+
+                        <!--<label class="labels1_3" style="">Time taken to charge from 0-3000(all pumps running)</label>-->
+
+                        <label class="labels1_4" style="">Pump runtime for maintenance</label>
+
+                        <label class="labels1_5" style="">Accumulator pressure(nitrogen pressure)</label>
+
+                        <label class="labels1_6" style="">Manifold set pressure</label>
+
+                        <!--<label class="labels1_7" style="">Number of accumulator bottles</label>-->
+
+                        <!--<label class="labels1_8" style="">Volume of accumulator</label>-->
+
+                        <!--<label class="tb1_1" id="yo"></label>-->
+                        <!--<label class="labelsend_1" >psi</label>-->
+                        <!--<label class="tb1_2" id="yo1"></label>-->
+                        <!--<label class="labelsend_2" >psi</label>-->
+                        <!--<label class="tb1_3" id="yo2"></label>-->
+                        <!--<label class="labelsend_3" s>s</label>-->
+                        <label class="tb1_4" id="yo3"></label>
+                        <label class="labelsend_4" >hr</label>
+                        <label class="tb1_5" id="yo4"></label>
+                        <label class="labelsend_5" >psi</label>
+                        <label class="tb1_6" id="yo5"></label>
+                        <label class="labelsend_6" >psi</label>
+                        <!--<label class="tb1_7" id="yo6"></label>-->
+                        <!--<label class="tb1_8" id="yo7"></label>-->
+                        <!--<label class="labelsend_7" >gal</label>-->
+
+
+                        <hr class="line_3">
+                    </div>
+                </div>
+                <div class="tabpage" id="tabpage_4">
+                    <div id="content4" style="display: none;">
+                      <!--  <div class="disp"><input  id="disp" type="text" style="" readonly="true"/></div>-->
+
+
+
+                        <section id="base_sec" class="">
+                            <div class="base_con">
+                                <table class="scroll">
+                                    <thead>
+                                    <tr  style="border-bottom: 1px solid #000;height: 40px;vertical-align: middle;">
+                                        <th>
+                                            Sr. No.
+
+                                        </th>
+                                        <th>
+                                           <!-- Valve Name-->
+										   VALVE NAME
+
+                                        </th>
+
+
+
+                                        <th>
+                                           <!-- Accumulator Pressure-->
+										   ACCUMULATOR PRESSURE
+
+                                        </th>
+                                        <th>
+                                           <!-- Manifold Pressure-->
+										   MANIFOLD PRESSURE
+
+                                        </th>
+                                        <th>
+                                            <!-- Manifold Pressure-->
+                                           Date
+
+                                        </th>
+                                        <th>
+                                           <!-- Response Time-->
+										   RESPONSE TIME
+
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="base_stng">
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+	 <!--Alarm footer content goes to JS file-->
+    <div id="data" style="display:none;">
+    </div>
+
+    <div class="f1"></div>
+
+
+    <!--not showing div onclick so disable show_dialog()-->
+    <!-- <div  style="display: block;" class="f2" onclick="show_dialog()"></div>-->
+    <div  style="display: block;" class="f2"></div>
+	
+    
+    <div id="data" style="display:none;">
+    </div>
+    <img class="logo_div" src="png/sara_logo.png"/>
+    <img src="svg/btm_arrow.svg" id="btm_arrow"/>
+</div>
+
+<script src="/javascripts/jquery.min.js"></script>
+<script src="socket.io/socket.io.js"></script>
+<script type="text/javascript" src="/javascripts/date.js"></script>
+<script type='text/javascript' src='/javascripts/jquery.simplemodal.js'></script>
+<script src="/datajs/t_alarm.js"></script>
+<script src="/datajs/Almarqu.js"></script>
+<script src="/datajs/rig_info.js"></script>
+<script type="text/javascript" src="javascripts/animated_marq/jquery.textillate.js"></script>
+<script type="text/javascript" src="javascripts/animated_marq/jquery.fittext.js"></script>
+<script type="text/javascript" src="javascripts/animated_marq/jquery.lettering.js"></script>
+</body>
+</html>

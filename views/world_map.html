@@ -1,0 +1,238 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Sara Sae :: RT138</title>
+
+    <link rel="stylesheet" href="/stylesheets/ammap.min.css" type="text/css">
+    <link rel="stylesheet" href="/stylesheets/fonts.min.css" type="text/css">
+    <link rel="stylesheet" href="/stylesheets/world_map.min.css" /> <!--page CSS-->
+
+</head>
+
+<body>
+<!--
+  <div> -->
+
+<div class="divsup">
+
+    <div class="ar" style="">ACTIVE RIGS</div>
+    <div style="float:left;width:140px">
+        <table style="border-collapse: collapse;width:100%;height: 169px;" >
+
+            <tr  class="row1" >
+                <td style="background-color:#CCCCCC;border:1px solid #000000;border-right: none;color:#666666;font-size: 14px;text-align: center;">Rig Name</td>
+            </tr>
+            <tr >
+
+                <td style="background-color:#CCCCCC;border:1px solid #000000;border-right: none;color:#666666;font-size: 14px;text-align: center;">Latitude</td>
+            </tr>
+            <tr >
+                <td style="background-color:#CCCCCC;border:1px solid #000000;border-right: none;color:#666666;font-size: 14px;text-align: center;">Longitude</td>
+
+            </tr>
+
+            <tr >
+                <td style="background-color:#CCCCCC;border:1px solid #000000;border-right: none;color:#666666;font-size: 14px;text-align: center;">File Update</td>
+            </tr>
+
+            <tr >
+                <td style="background-color:#CCCCCC;border:1px solid #000000;border-right: none;color:#666666;font-size: 14px;text-align: center;">Number of Alarms</td>
+
+            </tr>
+            <tr >
+
+                <td style="background-color:#CCCCCC;border:1px solid #000000;border-right: none;color:#666666;font-size: 14px;text-align: center;">Total Days of Alarm</td>
+            </tr>
+            <tr >
+                <td style="background-color:#CCCCCC;border:1px solid #000000;border-right: none;color:#666666;font-size: 14px;text-align: center;">Date</td>
+            </tr>
+
+            <tr >
+                <td style="background-color:#CCCCCC;border:1px solid #000000;border-right: none;color:#666666;font-size: 14px;text-align: center;">Time</td>
+            </tr>
+
+
+
+
+        </table>
+    </div>
+    <div class="table_ar">
+
+
+        <table id="vertical-2" >
+
+            <tr id="row1" class="row1">
+                <td><div class="part-left" style="width:130px;font-size:12px">Rig Name</div></td>
+
+            </tr>
+            <tr id="row2">
+                <td><div id="rem1" class="part-left" style="width:130px;font-size:12px">Latitude</div></td>
+
+            </tr>
+            <tr id="row3">
+                <td><div id="rem1" class="part-left" style="width:130px;font-size:12px">Longitude</div></td>
+
+            </tr>
+
+            <tr id="row8">
+                <td><div id="rem1" class="part-left" style="width:130px;font-size:12px">File Update</div></td>
+
+            </tr>
+
+            <tr id="row4">
+                <td><div id="rem1" class="heading1 part-left" style="width:130px;font-size:12px">Number of Alarms</div></td>
+
+            </tr>
+            <tr id="row5">
+                <td><div id="rem1" class="heading1 part-left heading1" style="width:130px;font-size:12px">Total Days of Alarm</div></td>
+
+            </tr>
+            <tr id="row6">
+                <td><div id="rem1" class="heading1 part-left heading1" style="width:130px;font-size:12px">Date</div></td>
+
+            </tr>
+
+            <tr id="row7">
+                <td><div id="rem1" class="heading1 part-left heading1" style="width:130px;font-size:12px">Time</div></td>
+
+            </tr>
+
+
+
+
+        </table>
+    </div>
+
+</div>
+
+<div class="map_cover" >
+
+    <div class="img_cover" style="margin-right:200px; background-color:white;width:100%; height: 35px;">
+        <img src="png/sara_logo.png" style="width:60px;height:20px;margin-top:15px;margin-left:15px;opacity:0.3;">
+    </div>
+
+    <div id="mapdiv" style="margin-right:200px; background-color:white;color:#999999;width:100%;"></div>
+
+    <div id="button_cover" style="margin-right:200px; background-color:white;width:150px; height: 28px;float:left;">
+        <!-- <div style="color:red;width:1300px;height:25px;margin-top:380px;margin-left:2px"> -->
+
+    </div>
+
+
+
+</div>
+
+<div class="maintab">
+
+    <div id="divhead">
+
+        <table class="yoh" >
+            <tr>
+                <td class="t1">
+                    <div>
+                        Rig Name
+                    </div>
+                </td>
+                <td class="t2">
+                    <div>
+                        Latitude
+                    </div>
+                </td>
+                <td class="t3">
+                    <div>
+                        Longitude
+                    </div>
+                </td>
+                <td class="t4">
+                    <div>
+                        Date
+                    </div>
+                </td>
+                <td class="t5">
+                    <div>
+                        Time
+                    </div>
+                </td>
+                <!-- <td style="background-color:#4D4D4D;height:17px;width:4px;">
+                     <div style="background-color:#4D4D4D;height:17px;width:14px;">
+
+                     </div>
+                 </td>-->
+            </tr>
+
+        </table>
+
+    </div>
+
+    <div class="umr" >UNDER MAINTENANCE RIGS</div>
+
+    <div class="map_detail">
+
+        <table class="yo" >
+
+        </table>
+
+
+    </div>
+
+
+    <div class="mor">MOVING RIGS</div>
+    <div class="map_detail">
+        <table class="yo1" >
+
+
+        </table>
+    </div>
+
+    <div class="or" >OTHER RIGS</div>
+    <div class="map_detail">
+        <table class="yo2">
+
+
+        </table>
+
+    </div>
+
+
+</div>
+
+<div id="ftable_cover">
+    <table class="map_footer">
+
+        <tr>
+            <td align="left"> <button id="logout" style="color:#ED1C24;width:160px;height:25px;margin-left:5px">STOP TO LOGOUT</button></td>
+            <td >
+                USER: <label id="usr">xyz</label>
+
+            </td>
+            <td>|</td>
+            <td>
+                RUNNING DURATION- <label id="tme">12:30:02</label>
+            </td>
+            <td>|</td>
+            <td >
+                DATE & TIME-<label id="dttm">02/04/2014 10:10AM</label>
+            </td>
+
+        </tr>
+
+
+    </table>
+    <!-- </div> -->
+
+
+</div>
+<!-- </div> -->
+
+
+<script src="/javascripts/ammap.js" type="text/javascript"></script>
+<script src="socket.io/socket.io.js"></script>
+<script src="/javascripts/worldLow.js" type="text/javascript"></script>
+<script src="/javascripts/jquery.min.js"></script>
+<script src="/javascripts/date.js"></script>
+<script src="/datajs/t_alarm.js"></script>
+<script src="/datajs/world_map.js"></script>
+</body>
+</html>
